@@ -19,13 +19,13 @@ class TestRpsGame < Test::Unit::TestCase
   end
   
   def test_healthy
-    dessert = Dessert.new("Yoghurt", 100)
+    dessert = Dessert.new("Yoghurt", 199)
     
     assert_equal true, dessert.healthy?
   end
   
   def test_unhealthy
-    dessert = Dessert.new("Cookies", 300)
+    dessert = Dessert.new("Cookies", 200)
     
     assert_equal false, dessert.healthy?
   end
@@ -47,4 +47,14 @@ class TestRpsGame < Test::Unit::TestCase
     
     assert_equal true, jellybean.delicious?
   end
+  
+  def test_jellybean_accessor
+    jellybean = JellyBean.new("black licorice ", 100, "raspberry")
+	
+	assert_equal "raspberry", jellybean.flavor
+	
+	jellybean.flavor = "vanilla"
+	assert_equal "vanilla", jellybean.flavor
+  end
+  
 end
