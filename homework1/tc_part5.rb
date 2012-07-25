@@ -126,11 +126,6 @@ class TestRpsGame < Test::Unit::TestCase
     assert_equal false, [:two, 2, "Blah", 2, :one].palindrome?
   end
   
-  def test_hash_palindrome_cases
-    #Test cases true
-    assert_equal true, ["stringtest", 2, "Blah", 2, "StringTest"].palindrome?
-  end
-  
   def test_hash_palindrome_even_element_count
     #Test even elements
     assert_equal true, ["stringtest", 2, "Blah", "Blah", 2, "stringtest"].palindrome?
