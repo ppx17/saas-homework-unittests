@@ -4,19 +4,19 @@ require "test/unit"
 class TestRpsGame < Test::Unit::TestCase
   
   def test_too_few_players
-    assert_raise WrongNumberOfPlayersError, do
-      rps_game_winner([["Niels", "S"]])
-    end
+    assert_raise WrongNumberOfPlayersError do 
+      rps_game_winner([["Niels", "S"]]) 
+     end
   end
   
   def test_too_many_players
-    assert_raise WrongNumberOfPlayersError, do
+    assert_raise WrongNumberOfPlayersError do
       rps_game_winner([["Niels", "S"], ["Ruby", "P"], ["PHP", "P"]])
     end
   end
   
   def test_unknown_strategy
-    assert_raise NoSuchStrategyError, do
+    assert_raise NoSuchStrategyError do
       rps_game_winner [["Niels", "S"], ["Ruby", "x"]]
     end
   end
