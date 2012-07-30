@@ -40,6 +40,7 @@ class TestRpsGame < Test::Unit::TestCase
   
   def test_example_tournament
     tournament_data = [
+      [
        [ ["Armando", "P"], ["Dave", "S"] ],
        [ ["Richard", "R"],  ["Michael", "S"] ],
      ],
@@ -47,6 +48,7 @@ class TestRpsGame < Test::Unit::TestCase
        [ ["Allen", "S"], ["Omer", "P"] ],
        [ ["David E.", "R"], ["Richard X.", "P"] ]
      ]
+    ]
     
     assert_equal ["Richard", "R"], rps_tournament_winner(tournament_data)
   end
