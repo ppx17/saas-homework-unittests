@@ -10,7 +10,7 @@ class MultiPropertyTestClass
   attr_accessor_with_history :bar
 end
 
-class TestRpsGame < MiniTest::Unit::TestCase
+class TestPart5 < MiniTest::Unit::TestCase
   
   def test_single_property_history
     f = SinglePropertyTestClass.new
@@ -106,29 +106,29 @@ class TestRpsGame < MiniTest::Unit::TestCase
   end
   
   def test_palindrome
-    assert_equal true, "A man, a plan, a canal -- Panama".palindrome? 
-    assert_equal true, "Madam, I'm Adam!".palindrome?
-    assert_equal false, "Madam, I'm Adam! Yes".palindrome?
-    assert_equal false, "Abracadabra".palindrome?
+    assert "A man, a plan, a canal -- Panama".palindrome? 
+    assert "Madam, I'm Adam!".palindrome?
+    refute "Madam, I'm Adam! Yes".palindrome?
+    refute "Abracadabra".palindrome?
   end
   
   def test_hash_palindrome_int
     #Test ints true
-    assert_equal true, [1,2,3,2,1].palindrome?
+    assert [1,2,3,2,1].palindrome?
     #Test ints false
-    assert_equal false, [1,2,3,2,2].palindrome?
+    refute [1,2,3,2,2].palindrome?
   end
   
   def test_hash_palindrome_mixed
     #Test mixed true
-    assert_equal true, [:one, 2, "Blah", 2, :one].palindrome?
+    assert [:one, 2, "Blah", 2, :one].palindrome?
     #Test mixed false
-    assert_equal false, [:two, 2, "Blah", 2, :one].palindrome?
+    refute [:two, 2, "Blah", 2, :one].palindrome?
   end
   
   def test_hash_palindrome_even_element_count
     #Test even elements
-    assert_equal true, ["stringtest", 2, "Blah", "Blah", 2, "stringtest"].palindrome?
+    assert ["stringtest", 2, "Blah", "Blah", 2, "stringtest"].palindrome?
   end
   
 end

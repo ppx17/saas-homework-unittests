@@ -1,22 +1,22 @@
 require_relative "part2"
 require "minitest/unit"
 
-class TestRpsGame < MiniTest::Unit::TestCase
+class TestPart2 < MiniTest::Unit::TestCase
   
   def test_too_few_players
-    assert_raise WrongNumberOfPlayersError do 
+    assert_raises WrongNumberOfPlayersError do 
       rps_game_winner([["Niels", "S"]]) 
      end
   end
   
   def test_too_many_players
-    assert_raise WrongNumberOfPlayersError do
+    assert_raises WrongNumberOfPlayersError do
       rps_game_winner([["Niels", "S"], ["Ruby", "P"], ["PHP", "P"]])
     end
   end
   
   def test_unknown_strategy
-    assert_raise NoSuchStrategyError do
+    assert_raises NoSuchStrategyError do
       rps_game_winner [["Niels", "S"], ["Ruby", "x"]]
     end
   end
@@ -40,7 +40,6 @@ class TestRpsGame < MiniTest::Unit::TestCase
   
   def test_example_tournament
     tournament_data = [
-      [
        [ ["Armando", "P"], ["Dave", "S"] ],
        [ ["Richard", "R"],  ["Michael", "S"] ],
      ],
@@ -48,7 +47,6 @@ class TestRpsGame < MiniTest::Unit::TestCase
        [ ["Allen", "S"], ["Omer", "P"] ],
        [ ["David E.", "R"], ["Richard X.", "P"] ]
      ]
-    ]
     
     assert_equal ["Richard", "R"], rps_tournament_winner(tournament_data)
   end

@@ -1,60 +1,54 @@
 require_relative "part4"
 require "minitest/unit"
 
-class TestRpsGame < MiniTest::Unit::TestCase
+class TestPart4 < MiniTest::Unit::TestCase
+
+  def setup
+    @yoghurt = Dessert.new("Yoghurt", 199)
+    @cookies = Dessert.new("Cookies", 200)
+    @good_jb = JellyBean.new("Raspberry", 100, "Raspberry")
+    @bad_jb = JellyBean.new("Black Licorice", 100, "black licorice")
+  end
+
   def test_getters
-    dessert = Dessert.new("Yoghurt", 100)
-    
-    assert_equal "Yoghurt", dessert.name
-    assert_equal 100, dessert.calories
+    assert_equal "Yoghurt", @yoghurt.name
+    assert_equal 199, @yoghurt.calories
   end
   
   def test_setters
-    dessert = Dessert.new("Yoghurt", 100)
-    dessert.name = "Strawberries"
-    dessert.calories = 75
+    @yoghurt.name = "Strawberries"
+    @yoghurt.calories = 75
     
-    assert_equal "Strawberries", dessert.name
-    assert_equal 75, dessert.calories
+    assert_equal "Strawberries", @yoghurt.name
+    assert_equal 75, @yoghurt.calories
   end
   
   def test_healthy
-    dessert = Dessert.new("Yoghurt", 199)
-    
-    assert_equal true, dessert.healthy?
+    assert @yoghurt.healthy?
   end
   
   def test_unhealthy
-    dessert = Dessert.new("Cookies", 200)
-    
-    assert_equal false, dessert.healthy?
+    refute @cookies.healthy?
   end
   
   def test_delicous
-    dessert = Dessert.new("Yoghurt", 100)
-    
-    assert_equal true, dessert.delicious?
+    assert @yoghurt.delicious?
+    assert @cookies.delicious?
   end
   
   def test_jellybean_not_delicious
-    jellybean = JellyBean.new("black licorice ", 100, "black licorice")
-    
-    assert_equal false, jellybean.delicious?
+    refute @bad_jb.delicious?
   end
   
   def test_jellybean_delicious
-    jellybean = JellyBean.new("black licorice ", 100, "raspberry")
-    
-    assert_equal true, jellybean.delicious?
+    assert @good_jb.delicious?
   end
   
   def test_jellybean_accessor
-    jellybean = JellyBean.new("black licorice ", 100, "raspberry")
-	
-	assert_equal "raspberry", jellybean.flavor
-	
-	jellybean.flavor = "vanilla"
-	assert_equal "vanilla", jellybean.flavor
+    assert_equal "Raspberry", @good_jb.flavor
+
+    @good_jb.flavor = "vanilla"
+    assert_equal "vanilla", @good_jb.flavor
   end
-  
+
 end

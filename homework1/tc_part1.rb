@@ -1,13 +1,13 @@
 require_relative "part1"
 require "minitest/unit"
 
-class TestRpsGame < MiniTest::Unit::TestCase
+class TestPart1 < MiniTest::Unit::TestCase
   
   def test_palindrome_valid
-    assert_equal true, palindrome?("A man, a plan, a canal -- Panama") 
-    assert_equal true, palindrome?("Madam, I'm Adam!")
-    assert_equal false, palindrome?("Madam, I'm Adam! Yes")
-    assert_equal false, palindrome?("Abracadabra")
+    assert palindrome?("A man, a plan, a canal -- Panama") 
+    assert palindrome?("Madam, I'm Adam!")
+    refute palindrome?("Madam, I'm Adam! Yes")
+    refute palindrome?("Abracadabra")
   end
   
   def test_count_words_valid 
