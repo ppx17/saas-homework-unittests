@@ -1,7 +1,7 @@
 require_relative "part4"
-require "test/unit"
+require "minitest/unit"
 
-class TestRpsGame < Test::Unit::TestCase
+class TestRpsGame < MiniTest::Unit::TestCase
   def test_getters
     dessert = Dessert.new("Yoghurt", 100)
     

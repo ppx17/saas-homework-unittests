@@ -1,7 +1,7 @@
 require_relative "part3"
-require "test/unit"
+require "minitest/unit"
 
-class TestRpsGame < Test::Unit::TestCase
+class TestRpsGame < MiniTest::Unit::TestCase
   def test_example_anagram
     input = ['cars', 'for', 'potatoes', 'racs', 'four','scar', 'creams', 'scream'] 
     output = [["cars", "racs", "scar"], ["for"], ["potatoes"], ["four"], ["creams", "scream"]]
