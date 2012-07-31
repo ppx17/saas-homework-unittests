@@ -32,9 +32,6 @@ class TestRpsGame < Test::Unit::TestCase
   end
   
   def get_result_from_inputs(left, right)
-    c= CartesianProduct.new(left, right)
-    result = []
-    c.each{ |el| result << el} 
-    result
+    CartesianProduct.new(left, right).to_a
   end
 end
