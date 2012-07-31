@@ -1,7 +1,7 @@
 require_relative "part2"
-require "test/unit"
+require "minitest/unit"
 
-class TestRpsGame < Test::Unit::TestCase
+class TestRpsGame < MiniTest::Unit::TestCase
   
   def test_too_few_players
     assert_raise WrongNumberOfPlayersError do 

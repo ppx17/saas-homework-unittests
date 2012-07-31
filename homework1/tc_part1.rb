@@ -1,7 +1,7 @@
 require_relative "part1"
-require "test/unit"
+require "minitest/unit"
 
-class TestRpsGame < Test::Unit::TestCase
+class TestRpsGame < MiniTest::Unit::TestCase
   
   def test_palindrome_valid
     assert_equal true, palindrome?("A man, a plan, a canal -- Panama") 

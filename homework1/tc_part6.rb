@@ -1,7 +1,7 @@
 require_relative "part6"
-require "test/unit"
+require "minitest/unit"
 
-class TestRpsGame < Test::Unit::TestCase
+class TestRpsGame < MiniTest::Unit::TestCase
   def test_cartesian_product_equal_arrays    
     assert_equal [[:a, 4], [:a, 5], [:b, 4], [:b, 5]], get_result_from_inputs([:a, :b], [4, 5])
   end

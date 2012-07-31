@@ -1,5 +1,5 @@
 require_relative "part5"
-require "test/unit"
+require "minitest/unit"
 
 class SinglePropertyTestClass
   attr_accessor_with_history :bar
@@ -10,7 +10,7 @@ class MultiPropertyTestClass
   attr_accessor_with_history :bar
 end
 
-class TestRpsGame < Test::Unit::TestCase
+class TestRpsGame < MiniTest::Unit::TestCase
   
   def test_single_property_history
     f = SinglePropertyTestClass.new
